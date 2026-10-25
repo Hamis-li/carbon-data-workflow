@@ -1,0 +1,7 @@
+services:
+  carbon-workflow:
+    build: .
+    ports:
+      - "8501:8501"
+    init: true
+    restart: unless-stopped
