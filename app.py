@@ -142,6 +142,8 @@ else:
    chart(scatter(a,growth),'05_规模与增长');table(focus.to_dict('records'),['province','year','total_mt','growth_pct','yoy_pct'])
   else:st.info('没有距末年整五年的数据，不强行计算五年变化。其余四类图表可以正常使用。')
   st.download_button('下载末年统计结果CSV',safe_csv(features.to_dict('records'),['province','year','total_mt','growth_pct','yoy_pct','focus']),'末年统计.csv')
+  from research import render
+  render(records,chart,table)
  elif stage==4:
   st.subheader('当前已经运行的流程')
   st.info('浏览器上传文件 → Streamlit服务器运行Python → 读取与清洗 → 整理成省年表 → 统计计算 → 浏览器显示图表与下载。')
